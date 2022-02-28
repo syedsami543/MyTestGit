@@ -1,3 +1,4 @@
 Hi this is my new line
 welcome to github
 thanks
+newly added line
