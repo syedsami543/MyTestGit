@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Simple Intrest caluclator">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around_medium">
+                <lightning-input type="number" label="Enter Principal Amount" onchange={principalHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around_medium">
+                <lightning-input type="number" label="Enter No of years" onchange={yearsHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around_medium">
+                <lightning-input type="decimal" label="Enter Rate of Intrest" onchange={interestHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around_medium">
+                <lightning-button label="caluclate SI" icon-position="centre" onclick={caluclateHandler}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around_medium">
+                <lightning-formatted-text value={currentOutput}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

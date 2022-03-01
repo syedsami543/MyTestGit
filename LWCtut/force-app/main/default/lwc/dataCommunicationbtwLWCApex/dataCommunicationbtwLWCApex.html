@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Caluclator">
+        <lightning-button label="Submit" slot="actions"></lightning-button>
+        <p class="slds-m-around_medium">
+            <lightning-input type="decimal" value={fstnumber} name="fstnumber" label="Enter First Number" onchange={handleChange}></lightning-input>
+            <lightning-input type="decimal" value={scdnumber} name="scdnumber" label="Enter second Number" onchange={handleChange}></lightning-input>
+        </p>
+        <p slot="footer">Result={sum}</p>
+    </lightning-card>
+    
+</template>
