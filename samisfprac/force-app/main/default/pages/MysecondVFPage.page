@@ -1,0 +1,107 @@
+<apex:page standardController="account" >
+    <style>
+    	.samistyle
+        	{
+                color:red;
+                background-color:orange;
+                font-size: 15px;
+                font-style:italic;
+                
+             }
+        .syedstyle
+        	{
+        		color:green;
+        		background-color:yellow;
+        		border-style:solid;
+        		padding-left:20px;
+        		padding-top:10px;
+        		margin-left:900px;
+        	}
+        h1
+        	{
+        		font-size:40px;
+        		color:blue;
+        		font-weight:bold;
+        		margin-left:400px;
+        	}
+             
+    </style>
+    <!-- <apex:stylesheeet value="{!$resource.ST}" /> -->   
+    
+    <div class="syedstyle">
+    Loggedin user : {!$user.firstname} <p> </p>
+    user email : {!$user.email} 
+	</div>
+
+    <apex:image value="{!$Resource.scenary}" />
+    <apex:iframe src="https://www.apollohospitals.com/" />
+    <h1>welcome to the Apollo Hospitals</h1> <br/>
+    <apex:outputLink value="https://www.apollohospitals.com/" >Apollo Hospitals</apex:outputLink>
+  <!--  <apex:image value="{!$resource.tajmahal}" height="200" width="500" /> -->
+  <apex:tabPanel >
+  	  <apex:tab label="account">
+          <apex:form >
+          <apex:pageBlock title="account details">
+              <apex:pageBlockSection title="section 1">
+                  <apex:inputField value="{!account.name}" styleClass="samistyle"/>
+                      <apex:inputField value="{!Account.Phone}" styleClass="samistyle"/>
+            		  <apex:inputField value="{!Account.Fax}" styleClass="samistyle"/>
+            		  <apex:inputField value="{!Account.Sic}" styleClass="samistyle"/>
+            		  <apex:inputField value="{!Account.Billingcity}" styleClass="samistyle"/>
+            		  <apex:inputField value="{!Account.Industry}" styleClass="samistyle"/>
+                      <apex:inputSecret value="{!account.Website}" styleClass="samistyle"/>
+                      <apex:inputText label="Enter Size"/>
+                  <apex:inputTextarea label="Problem Description" />
+                  <apex:pageBlockSectionItem >
+                      <apex:outputLabel value="Enter OTP" />
+                      <apex:inputText />
+                  </apex:pageBlockSectionItem>
+                  <apex:commandButton value="click here to save" action="{!save}"/>
+              </apex:pageBlockSection>
+              <apex:pageBlockSection title="section 2">
+                  <apex:selectCheckboxes label="course intrested" layout="pagedirection">
+                      <apex:selectOption itemlabel="salesforce" itemvalue="SF"/>
+                      <apex:selectOption itemlabel="amazon web services" itemvalue="AWS"/>
+                      <apex:selectOption itemlabel="microsoft aure" itemvalue="MA"/>
+                      <apex:selectOption itemlabel="Cloud" itemvalue="cd"/>
+                      <apex:commandLink value="click here to save" action="{!save}"/>
+                  </apex:selectCheckboxes>
+              </apex:pageBlockSection>
+              <apex:pageBlockSection title="section 3">
+                  <apex:selectRadio label="Choose Term" layout="pagedirection" >
+                      <apex:selectOption itemlabel="Monthly" itemvalue="mn"/>
+                      <apex:selectOption itemlabel="Quaterly" itemvalue="qt"/>
+                      <apex:selectOption itemlabel="Half-early" itemvalue="hy"/>
+                      <apex:selectOption itemlabel="Anually" itemvalue="an"/>
+                      <apex:commandLink value="click here to save" action="{!save}"/>
+                  </apex:selectRadio>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+          </apex:form>
+    </apex:tab>
+      <apex:tab label="contact">
+          <apex:pageBlock title="contact details">
+              <apex:pageBlockSection title="section-1">
+                  <apex:relatedList list="contacts"/><P></P>
+                  <apex:dataTable value="{!account.contacts}" var="ac" bgcolor="red" border="3px">
+                <apex:column value="{!ac.Firstname}" headerValue="contact first name"/>
+                <apex:column value="{!ac.lastname}" headerValue="contact last name"/>
+                <apex:column value="{!ac.Mobilephone}" headerValue="mobilephone"/>
+            </apex:dataTable>
+              </apex:pageBlockSection>
+          </apex:pageBlock>      
+    </apex:tab>
+      <apex:tab label="case">
+          <apex:pageBlock title="contact details">
+              <apex:pageBlockSection title="section-1">
+                  <apex:relatedList list="cases"/><p></p>
+                  <apex:dataTable value="{!account.cases}" var="ac" bgcolor="red" border="3px">
+                <apex:column value="{!ac.AccountId}" headerValue="contact first name"/>
+                <apex:column value="{!ac.CaseNumber}" headerValue="contact last name"/>
+                <apex:column value="{!ac.ContactEmail}" headerValue="mobilephone"/>
+            </apex:dataTable>
+              </apex:pageBlockSection>
+          </apex:pageBlock>  
+      </apex:tab>
+  </apex:tabPanel>
+</apex:page>

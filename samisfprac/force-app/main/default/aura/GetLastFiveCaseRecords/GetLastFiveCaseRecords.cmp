@@ -1,0 +1,60 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" controller="GetLastFiveCaseRecords" access="global" >
+	<aura:attribute name="lstCases" type="String[]" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <br/>
+    <div class="slds">
+        <div style="font-size:18px;font-weight:bold;margin-left:20px">
+            CASES LIST
+        </div>
+        <br/>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="CaseNumber">CaseNumber</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="ContactPhone">ContactPhone</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Description">Description</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Origin">Origin</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Subject">Subject</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Status">Status</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.lstcases}" var="Case">
+                    <tr class="slds-hint-parent">
+                        <td data-label="CaseNumber">
+                            <div class="slds-truncate" title="{!Case.CaseNumber}">{!Case.CaseNumber}</div>
+                        </td>
+                        <td data-label="ContactPhone">
+                            <div class="slds-truncate" title="{!Case.ContactPhone}">{!Case.ContactPhone}</div>
+                        </td>
+                        <td data-label="Description">
+                            <div class="slds-truncate" title="{!Case.Description}">{!Case.Description}</div>
+                        </td>
+                        <td data-label="Origin">
+                            <div class="slds-truncate" title="{!Case.Origin}">{!Case.Origin}</div>
+                        </td>
+                        <td data-label="Status">
+                            <div class="slds-truncate" title="{!Case.Status}">{!Case.Status}</div>
+                        </td>
+                        <td data-label="Subject">
+                            <div class="slds-truncate" title="{!Case.Subject}">{!Case.Subject}</div>
+                        </td>
+                </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>	
+</aura:component>

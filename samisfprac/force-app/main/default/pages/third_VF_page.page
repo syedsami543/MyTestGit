@@ -1,0 +1,41 @@
+<apex:page standardController="account" sidebar="false" showHeader="false" >
+    <apex:tabPanel >
+        <apex:tab label="account-section">
+            <apex:form >
+                <apex:pageBlock title="account-details">
+                    <apex:pageBlockSection title="section-1">
+                        <apex:outputField value="{!account.name}" />
+                        <apex:outputField value="{!account.fax}" />
+                        <apex:outputField value="{!account.phone}" />
+                        <apex:outputField value="{!account.billingcity}" />
+                        <apex:outputField value="{!account.industry}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="section-1">
+                        <apex:inputfield value="{!account.name}" />
+                        <apex:inputfield value="{!account.fax}" />
+                        <apex:inputfield value="{!account.phone}" />
+                        <apex:inputfield value="{!account.billingcity}" />
+                        <apex:inputfield value="{!account.industry}" />
+                        <apex:inputSecret value="{!account.name}" />
+                        <apex:inputText label="Enter your pet name" />
+                        <apex:commandButton value="click here to save changes" action="{!save}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+        <apex:tab label="contact-section">
+        <!--    <apex:form > -->
+                <apex:pageBlock title="Contact details" >
+                    <apex:pageBlockSection title="section-1">
+                        <apex:relatedList list="cases" />
+                        <apex:relatedList list="contacts" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            <!-- </apex:form> -->
+        </apex:tab>
+        <apex:tab label="case-section">
+            <apex:form >
+            </apex:form>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

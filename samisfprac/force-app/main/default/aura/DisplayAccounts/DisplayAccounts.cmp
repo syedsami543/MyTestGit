@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="DisplayAccounts" access="global" >
+	<lightning:input aura:id="searchvalue" name="searchvalue" label="Type Account Name" />
+    <aura:attribute name="lstaccounts" type="List"/>
+     <lightning:button variant="brand" label="Search" title="Search" onclick="{! c.handleClick }" />
+     <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Id">Id</div>
+                    </th><br/>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th><br/>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Rating">Rating</div>
+                    </th><br/>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.lstaccounts}" var="ac">
+                    <tr class="slds-hint-parent">
+                        <td data-label="Id">
+                            <div class="slds-truncate" title="{!ac.Id}">{!ac.Id}</div>
+                        </td><br/>
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="{!ac.Name}">{!ac.Name}</div>
+                        </td><br/>
+                        <td data-label="Rating">
+                            <div class="slds-truncate" title="{!ac.Rating}">{!ac.Rating}</div>
+                        </td><br/>
+                        <td data-label="Origin">
+                            <div class="slds-truncate" title="{!ac.Phone}">{!ac.Phone}</div>
+                        </td>
+                </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+</aura:component>

@@ -1,0 +1,30 @@
+<apex:page standardController="Account" sidebar="false" showHeader="false" >
+	    <apex:pageBlock title="Account Details 1">
+        <apex:pageBlockSection title="Section 1 -Display object fields" columns="2" collapsible="false">
+            <apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Account.Phone}"/>
+            <apex:outputField value="{!Account.Fax}"/>
+            <apex:outputField value="{!Account.Sic}"/>
+            <apex:outputField value="{!Account.Billingcity}"/>
+            <apex:outputField value="{!Account.Industry}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Section 2 -Display Related Data">
+            <apex:relatedList list="contacts"/> <p></p>
+            <apex:relatedList list="cases"/> <p></p>
+            <apex:relatedList list="opportunities"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Section 3 - Display custom data">
+            <apex:dataTable value="{!account.contacts}" var="ac" bgcolor="red" border="3px">
+                <apex:column value="{!ac.Firstname}" headerValue="contact first name"/>
+                <apex:column value="{!ac.lastname}" headerValue="contact last name"/>
+                <apex:column value="{!ac.Mobilephone}" headerValue="mobilephone"/>
+            </apex:dataTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="Account Details 2">
+        <apex:pageBlockSection title="Section 4">
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Section 4">
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
