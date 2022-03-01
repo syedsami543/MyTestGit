@@ -9,6 +9,7 @@ export default class DataCommunicationbtwLWCApex extends LightningElement {
         getSumResult({firstnumber:this.fnumber,secondnumber:this.snumber})
         .then(result=>{
         this.sum=result;
+        console.log(sum);
         })
         .catch(error=>{
         this.errors=error;

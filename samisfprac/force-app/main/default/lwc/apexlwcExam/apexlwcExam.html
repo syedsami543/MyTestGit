@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Caluclate Area">
+        <div class="slds-m-around_medium" >
+            <lightning-input type="decimal" name="length" label="Enter Length" onchange={changeHandler}></lightning-input>
+            <lightning-input type="decimal" name="breadth" label="Enter Breadth" onchange={changeHandler}></lightning-input>
+        </div>
+        <p class="slds-m-around_medium" >
+            <lightning-input type="decimal" name="side" label="Enter Side" onchange={changeHandler}></lightning-input>
+        </p>
+        <p class="slds-m-around_medium" >
+            <lightning-input type="decimal" name="radius" label="Enter Radius" onchange={changeHandler}></lightning-input>
+        </p>
+        <div class="slds-m-around_medium">
+            <lightning-button label="Caluclate"  onclick={caluclateHandler}></lightning-button>
+        </div>
+        <p slot="footer"> 
+                Result={res}
+        </p>
+    </lightning-card>
+    
+</template>
