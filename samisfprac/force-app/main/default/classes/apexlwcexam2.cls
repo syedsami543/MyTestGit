@@ -1,7 +1,7 @@
 public with sharing class apexlwcexam2 {
     @AuraEnabled 
-    public static list<contatc> getContacts(string accid) {
-    List<contact> NL = [select id, name, phone, fax, industry from contact where account id in:accid];
+    public static list<contact> getContacts(string recordId) {
+    List<contact> NL = [SELECT Email,Fax,FirstName,Id,LastName,Name,Phone FROM Contact where AccountId =:recordId];
     return NL;
     }
 }

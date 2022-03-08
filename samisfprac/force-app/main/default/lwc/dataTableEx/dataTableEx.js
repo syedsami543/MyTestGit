@@ -3,7 +3,7 @@ import getAccounts from "@salesforce/apex/AccountController.getAccounts";
 
 export default class DisplayDataUsingWire extends LightningElement {
     @track data;
-    @track coloumns = [
+    @track columns = [
         {label:'Name',fieldName:'Name',type:'text'},
         {label:'Phone',fieldName:'Phone',type:'text'},
         {label:'Industry',fieldName:'Industry',type:'text'}
