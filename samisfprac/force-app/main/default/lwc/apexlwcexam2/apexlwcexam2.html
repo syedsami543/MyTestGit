@@ -1,15 +1,10 @@
 <template>
-   
     <header>Contacts Related Account</header>
     <div style="height: 300px;">
         <lightning-record-view-form record-id={recordId} object-api-name="Account">
-            <div class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
-                
-                    <lightning-datatable data={contactRecords} columns={columns} key-field="id"></lightning-datatable>
-                   
-
-            </div>   
+            <div class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">       
+                <lightning-datatable data={contactRecords} columns={columns} key-field="id"></lightning-datatable>
+             </div>   
         </lightning-record-view-form>
     </div>                
-
 </template> 
